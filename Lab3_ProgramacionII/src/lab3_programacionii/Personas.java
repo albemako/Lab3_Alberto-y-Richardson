@@ -32,6 +32,7 @@ public class Personas {
     }
 
     public Personas() {
+        super();
     }
 
     public Personas(String username, String password, String correo_electronico, String nombre, int id, String fecha_nacimiento) {

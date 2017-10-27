@@ -37,6 +37,7 @@ public class Empleado extends Personas{
     }
 
     public Empleado() {
+        super();
     }
 
     public String getHora_trabajo() {
