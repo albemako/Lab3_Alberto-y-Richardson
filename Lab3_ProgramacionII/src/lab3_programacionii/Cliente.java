@@ -11,17 +11,40 @@ import java.util.ArrayList;
  *
  * @author RALC
  */
-public class Cliente {
+public class Cliente extends Personas{
     private ArrayList <Productos> productos;
     private double dinero;
 
     public Cliente() {
+        super();
+    }
+    
+    
+
+    public Cliente(ArrayList<Productos> productos, double dinero, String username, String password, String correo_electronico, String nombre, int id, String fecha_nacimiento, boolean empleado_cliente, boolean socio) {
+        super(username, password, correo_electronico, nombre, id, fecha_nacimiento, empleado_cliente, socio);
+        this.productos = productos;
+        this.dinero = dinero;
     }
 
     public Cliente(ArrayList<Productos> productos, double dinero) {
         this.productos = productos;
         this.dinero = dinero;
     }
+
+    public Cliente(ArrayList<Productos> productos, double dinero, String username, String password, String correo_electronico, String nombre, int id, String fecha_nacimiento) {
+        super(username, password, correo_electronico, nombre, id, fecha_nacimiento);
+        this.productos = productos;
+        this.dinero = dinero;
+    }
+
+    public Cliente(ArrayList<Productos> productos, double dinero, String username, String password, String correo_electronico, String nombre, int id, String fecha_nacimiento, boolean empleado_cliente) {
+        super(username, password, correo_electronico, nombre, id, fecha_nacimiento, empleado_cliente);
+        this.productos = productos;
+        this.dinero = dinero;
+    }
+
+    
 
     public Cliente(double dinero) {
         this.dinero = dinero;
