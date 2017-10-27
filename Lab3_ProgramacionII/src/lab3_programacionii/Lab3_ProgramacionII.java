@@ -33,13 +33,16 @@ public class Lab3_ProgramacionII {
                 op="s";
             }
             if (op.equals("a")) {
-                int edad;
-                String nombre, lugar, usuario, pass;
+                int id;
+                String usuario, contra, correo, nombre, fecha;
                 nombre=JOptionPane.showInputDialog("nombre");
-                edad=Integer.parseInt(
-                  JOptionPane.showInputDialog("edad")
+                nombre=JOptionPane.showInputDialog("usuario");
+                nombre=JOptionPane.showInputDialog("contrasenia");
+                correo=JOptionPane.showInputDialog("correo");
+                id=Integer.parseInt(
+                  JOptionPane.showInputDialog("id")
                 );
-                lugar=JOptionPane.showInputDialog("Lugar de nacimiento");
+                fecha=JOptionPane.showInputDialog("fecha");
                 usuario=JOptionPane.showInputDialog("Username");
                 pass=JOptionPane.showInputDialog("Password");
                 personas.add(new Cliente());

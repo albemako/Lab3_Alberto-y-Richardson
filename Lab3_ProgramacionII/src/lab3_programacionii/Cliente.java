@@ -19,9 +19,8 @@ public class Cliente extends Personas{
         super();
     }
 
-    public Cliente(ArrayList<Productos> productos, double dinero, String username, String password, String correo_electronico, String nombre, int id, String fecha_nacimiento, boolean empleado_cliente, boolean socio) {
+    public Cliente(double dinero, String username, String password, String correo_electronico, String nombre, int id, String fecha_nacimiento, boolean empleado_cliente, boolean socio) {
         super(username, password, correo_electronico, nombre, id, fecha_nacimiento, empleado_cliente, socio);
-        this.productos = productos;
         this.dinero = dinero;
     }
     
