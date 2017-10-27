@@ -8,7 +8,8 @@ package lab3_programacionii;
 /**
  String resp = (String) JOptionPane.showInputDialog(null, 
                             "Seleccione el producto", "PRODUCTOS", 
-                            JOptionPane.DEFAULT_OPTION, null, productos, productos[0]);* @author RALC
+                            JOptionPane.DEFAULT_OPTION, null, productos, productos[0]);
+* @author RALC
  */
 public class Personas {
     private String username;

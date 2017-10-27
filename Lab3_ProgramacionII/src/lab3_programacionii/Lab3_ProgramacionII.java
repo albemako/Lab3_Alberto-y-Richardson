@@ -22,8 +22,31 @@ public class Lab3_ProgramacionII {
 
         ArrayList <Personas>personas=new ArrayList();
         personas.add(new Personas("usuario", "contra", "usuario@yahoo.com", "usu", 199999, "fecha", false, true));
-        //login
-        int resp=1, resp2=1;
+        //login o registro
+        String op="";
+        while ( !op.equals("s") ) {  
+            op=JOptionPane.showInputDialog(""
+                    + "a-Registro\n"
+                    + "b-Login\n"
+                    + "s-salir");
+            if(op==null){
+                op="s";
+            }
+            if (op.equals("a")) {
+                int edad;
+                String nombre, lugar, usuario, pass;
+                nombre=JOptionPane.showInputDialog("nombre");
+                edad=Integer.parseInt(
+                  JOptionPane.showInputDialog("edad")
+                );
+                lugar=JOptionPane.showInputDialog("Lugar de nacimiento");
+                usuario=JOptionPane.showInputDialog("Username");
+                pass=JOptionPane.showInputDialog("Password");
+                //personas.add(new Cliente(nombre,edad,lugar,usuario,pass));
+            }
+            if (op.equals("b")){
+                //login
+                int resp=1, resp2=1;
                 do{
                         resp2=1;
                     do{
@@ -53,6 +76,8 @@ public class Lab3_ProgramacionII {
                        resp2=0;
                     }
                 }while(resp2==0);
+            }
+        }
 
     }
     
