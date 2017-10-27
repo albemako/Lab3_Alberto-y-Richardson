@@ -16,9 +16,12 @@ public class Local_Comida  extends Locales{
         super();
     }
 
-    public Local_Comida(String prod_comida) {
+    public Local_Comida(String prod_comida, String nombre, int piso, Empleado em_encargado) {
+        super(nombre, piso, em_encargado);
         this.prod_comida = prod_comida;
     }
+
+
 
     public String getProd_comida() {
         return prod_comida;

@@ -84,7 +84,7 @@ public class Locales {
 
     @Override
     public String toString() {
-        return "Locales{" + "nombre=" + nombre + ", piso=" + piso + ", em_encargado=" + em_encargado + ", empleados=" + empleados + ", productos=" + productos + ", productos_vendidos=" + productos_vendidos + '}';
+        return nombre;
     }
 
 

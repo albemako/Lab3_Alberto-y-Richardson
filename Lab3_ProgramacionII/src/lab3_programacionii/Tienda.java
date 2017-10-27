@@ -31,6 +31,7 @@ public class Tienda extends Locales{
             this.tamaño = tamaño;
         }
     }
+
     
     
     

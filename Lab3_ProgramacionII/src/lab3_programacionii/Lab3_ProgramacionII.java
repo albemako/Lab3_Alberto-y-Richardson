@@ -46,6 +46,7 @@ public class Lab3_ProgramacionII {
                 fecha=JOptionPane.showInputDialog("fecha");
                 dinero=Double.parseDouble(JOptionPane.showInputDialog("Dinero"));
                 personas.add(new Cliente(dinero, usuario, contra, correo, nombre, id, fecha, true, false));
+                JOptionPane.showMessageDialog(null, "Cliente registrado exitosamente");
             }
             if (op.equals("b")){
                 //login
@@ -93,21 +94,107 @@ public class Lab3_ProgramacionII {
                                                       JOptionPane.showInputDialog("piso")
                                                     );
                                                     locales.add(new Tienda(tamaño, nombre, piso, null));
+                                                    JOptionPane.showMessageDialog(null, "Tienda creada exitosamente");
                                                 }
                                                 if (op3.equals("b")) {
-
+                                                    int piso, index;
+                                                    String nombre, nombre_tienda;
+                                                    nombre=JOptionPane.showInputDialog("nombre");
+                                                    String s="Eliga el numero de la tienda de la cual desea el nombre\n";
+                                                    for (Object t : locales) {
+                                                        if (t instanceof Tienda) {
+                                                           s+= ""+locales.indexOf(t)+"- "+t+"\n" ;
+                                                        }
+                                                    }
+                                                    
+                                                    index=Integer.parseInt(JOptionPane.showInputDialog(s));
+                                                    nombre_tienda=locales.get(index).getNombre();
+                                                    
+                                                    piso=Integer.parseInt(
+                                                      JOptionPane.showInputDialog("piso")
+                                                    );
+                                                    locales.add(new Quiosco(nombre_tienda, nombre, piso, null));
+                                                    JOptionPane.showMessageDialog(null, "Quiosco cread exitosamente");
                                                 }
                                                 if (op3.equals("c")) {
-
+                                                    int piso;
+                                                    String nombre, nombre_tienda;
+                                                    nombre=JOptionPane.showInputDialog("nombre");
+                                                    piso=Integer.parseInt(
+                                                      JOptionPane.showInputDialog("piso")
+                                                    );
+                                                    locales.add(new Local_Comida(null, nombre, piso, null));
+                                                    JOptionPane.showMessageDialog(null, "Local de comida creado exitosamente");
                                                 }
                                             }
                                         }
                                         if (op2.equals("b")) {
-
+                                            String op3="";
+                                            while ( !op3.equals("s") ) {  
+                                                op3=JOptionPane.showInputDialog(""
+                                                        + "a-Crear empleado\n"
+                                                        + "b-Asignar empleado\n"
+                                                        + "c-Eliminar empleado\n"
+                                                        + "s-salir");
+                                                if(op3==null){
+                                                    op3="s";
+                                                }
+                                                if (op3.equals("a")) {
+                                                    int id, vendidos=0;
+                                                    double dinero;
+                                                    String usuario, contra, correo, nombre, fecha, htrabajo;
+                                                    nombre=JOptionPane.showInputDialog("nombre");
+                                                    usuario=JOptionPane.showInputDialog("usuario");
+                                                    contra=JOptionPane.showInputDialog("contrasenia");
+                                                    correo=JOptionPane.showInputDialog("correo");
+                                                    id=Integer.parseInt(
+                                                      JOptionPane.showInputDialog("id")
+                                                    );
+                                                    fecha=JOptionPane.showInputDialog("fecha");
+                                                    
+                                                    personas.add(new Empleado(null, vendidos, usuario, contra, correo, nombre, id, fecha, true, false));
+                                                    JOptionPane.showMessageDialog(null, "Empleado creado existosamente");
+                                                }
+                                                if (op3.equals("b")) {
+                                                    int index, index2;
+                                                    String s="Eliga el numero del empleado que quiere asignar\n";
+                                                    for (Object t : personas) {
+                                                        if (t instanceof Empleado) {
+                                                           s+= ""+locales.indexOf(t)+"- "+t+"\n" ;
+                                                        }
+                                                    }
+                                                    
+                                                    index=Integer.parseInt(JOptionPane.showInputDialog(s));
+                                                    String s2="Eliga el numero de la tienda adonde desea asignar el empliado\n";
+                                                    for (Object t : locales) {
+                                                        if (t instanceof Locales) {
+                                                           s2+= ""+locales.indexOf(t)+"- "+t+"\n" ;
+                                                        }
+                                                    }
+                                                    index2=Integer.parseInt(JOptionPane.showInputDialog(s2));
+                                                    locales.get(index2).getEmpleados().add((Empleado)personas.get(index));
+                                                    String horario=JOptionPane.showInputDialog("Horario");
+                                                    ((Empleado)personas.get(index)).setHora_trabajo(horario);
+                                                    JOptionPane.showMessageDialog(null, "Empleado asignado exitosamente");
+                                                    
+                                                }
+                                                if (op3.equals("c")) {
+                                                    System.out.println("eliminar empliado");
+                                                }
+                                            }
                                         }
                                         if (op2.equals("c")) {
+                                            int index, index2;
+                                            String s="Eliga el numero del local al que quiere agregar producto\n";
+                                            for (Object t : locales) {
+                                                if (t instanceof Locales) {
+                                                   s+= ""+locales.indexOf(t)+"- "+t+"\n" ;
+                                                }
+                                            }
 
+                                            index=Integer.parseInt(JOptionPane.showInputDialog(s));
                                         }
+                                        if(locales.get(index)instance)
                                     }
                                     resp=1;
                                 }else{

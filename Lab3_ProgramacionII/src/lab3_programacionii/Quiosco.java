@@ -18,9 +18,12 @@ public class Quiosco extends Locales{
         super();
     }
 
-    public Quiosco(String nombre_tienda) {
+    public Quiosco(String nombre_tienda, String nombre, int piso, Empleado em_encargado) {
+        super(nombre, piso, em_encargado);
         this.nombre_tienda = nombre_tienda;
     }
+
+
 
     public String getNombre_tienda() {
         return nombre_tienda;
