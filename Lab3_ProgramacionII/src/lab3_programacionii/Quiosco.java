@@ -5,21 +5,38 @@
  */
 package lab3_programacionii;
 
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 /**
  *
  * @author RALC
  */
-public class Quiosco{
+public class Quiosco extends Locales{
     private String nombre_tienda;
-    private ArrayList <Productos> productos;//este debe estar a mitad de precio
 
     public Quiosco() {
-        for (Productos t : productos) {
-            
-        }
+        super();
     }
+
+    public Quiosco(String nombre_tienda) {
+        this.nombre_tienda = nombre_tienda;
+    }
+
+    public String getNombre_tienda() {
+        return nombre_tienda;
+    }
+
+    public void setNombre_tienda(String nombre_tienda) {
+        this.nombre_tienda = nombre_tienda;
+    }
+
+    @Override
+    public String toString() {
+        return "Quiosco{" + "nombre_tienda=" + nombre_tienda + '}';
+    }
+    
+    
+
     
     
     

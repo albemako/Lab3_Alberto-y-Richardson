@@ -10,7 +10,7 @@ package lab3_programacionii;
  * @author RALC
  */
 public class Productos {
-    private int precio;
+    private double precio;
     private String descripcion;
     private String marca;
     private double descuento;//En porcentaje o con 0.000
@@ -19,18 +19,18 @@ public class Productos {
         super();
     }
 
-    public Productos(int precio, String descripcion, String marca, double descuento) {
+    public Productos(double precio, String descripcion, String marca, double descuento) {
         this.precio = precio;
         this.descripcion = descripcion;
         this.marca = marca;
         this.descuento = descuento;
     }
 
-    public int getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
