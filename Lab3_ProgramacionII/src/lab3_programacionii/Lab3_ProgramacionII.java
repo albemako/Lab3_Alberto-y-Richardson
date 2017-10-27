@@ -19,6 +19,7 @@ public class Lab3_ProgramacionII {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+<<<<<<< HEAD
         ArrayList <Personas>personas=new ArrayList();
         
         //login
@@ -52,6 +53,9 @@ public class Lab3_ProgramacionII {
                        resp2=0;
                     }
                 }while(resp2==0);
+=======
+       
+>>>>>>> 09337d7f667d748d4ecaa2b28f3cbfe40982ae91
     }
     
 }
