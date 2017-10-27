@@ -70,6 +70,7 @@ public class Lab3_ProgramacionII {
                                                 + "b-Crear y asignar empleados\n"
                                                 + "c-Agregar productos\n"
                                                 + "d-Modificar\n"
+                                                + "e-Facturación\n"
                                                 + "s-salir");
                                         if(op2==null){
                                             op2="s";
@@ -231,6 +232,9 @@ public class Lab3_ProgramacionII {
                                                 default:
                                                     throw new AssertionError();
                                             }
+                                        }
+                                        if (op2.equals("e")) {
+                                            JOptionPane.showMessageDialog(null, ((Socio)personas.get(0)).getReportes());
                                         }
                                     }
                                     resp=1;
