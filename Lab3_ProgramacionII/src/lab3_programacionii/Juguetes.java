@@ -5,14 +5,11 @@
  */
 package lab3_programacionii;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author RALC
  */
-public class Cliente {
-    private ArrayList <Productos> productos;
-    private double dinero;
+public class Juguetes extends Productos{
+    private String tipo;//Rompezabezas, carro, otro
     
 }
