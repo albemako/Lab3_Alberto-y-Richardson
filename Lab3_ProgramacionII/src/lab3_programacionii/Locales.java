@@ -14,19 +14,31 @@ import java.util.ArrayList;
 public class Locales {
     private String nombre;
     private int piso;
-    private ArrayList <Empleado> empleados = new ArrayList();
     private Empleado em_encargado;
+    private ArrayList <Empleado> empleados;
+    private ArrayList <Productos> productos;
+    
 
     public Locales() {
+        empleados = new ArrayList();
     }
 
-    public Locales(String nombre, int piso, ArrayList<Empleado> empleados, Empleado em_encargado) {
+    public Locales(String nombre, int piso, Empleado em_encargado) {
         this.nombre = nombre;
         this.piso = piso;
-        this.empleados = empleados;
+        empleados = new ArrayList();
         this.em_encargado = em_encargado;
     }
 
+    public ArrayList<Productos> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(ArrayList<Productos> productos) {
+        this.productos = productos;
+    }
+
+    
     public String getNombre() {
         return nombre;
     }

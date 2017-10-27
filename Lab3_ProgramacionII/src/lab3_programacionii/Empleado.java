@@ -12,6 +12,8 @@ package lab3_programacionii;
 public class Empleado extends Personas{
     private String hora_trabajo;
     private int prod_vendidos;
+    
+    
 
     public Empleado(String hora_trabajo, int prod_vendidos, String username, String password, String correo_electronico, String nombre, int id, String fecha_nacimiento, boolean empleado_cliente, boolean socio) {
         super(username, password, correo_electronico, nombre, id, fecha_nacimiento, empleado_cliente, socio);

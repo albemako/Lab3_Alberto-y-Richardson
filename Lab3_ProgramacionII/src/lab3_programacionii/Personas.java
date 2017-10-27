@@ -21,6 +21,7 @@ public class Personas {
     private boolean empleado_cliente;
     private boolean socio;
 
+    
     public Personas(String username, String password, String correo_electronico, String nombre, int id, String fecha_nacimiento, boolean empleado_cliente, boolean socio) {
         this.username = username;
         this.password = password;
