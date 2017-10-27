@@ -72,7 +72,35 @@ public class Lab3_ProgramacionII {
                                             op2="s";
                                         }
                                         if (op2.equals("a")) {
-                                            System.out.println("crear local");
+                                            String op3="";
+                                            while ( !op3.equals("s") ) {  
+                                                op3=JOptionPane.showInputDialog(""
+                                                        + "a-Tienda\n"
+                                                        + "b-Quiosco\n"
+                                                        + "c-Local de comida\n"
+                                                        + "s-salir");
+                                                if(op3==null){
+                                                    op3="s";
+                                                }
+                                                if (op3.equals("a")) {
+                                                    int tamaño, piso;
+                                                    String nombre;
+                                                    nombre=JOptionPane.showInputDialog("nombre");
+                                                    tamaño=Integer.parseInt(
+                                                      JOptionPane.showInputDialog("tamaño")
+                                                    );
+                                                    piso=Integer.parseInt(
+                                                      JOptionPane.showInputDialog("piso")
+                                                    );
+                                                    locales.add(new Tienda(tamaño, nombre, piso, null));
+                                                }
+                                                if (op3.equals("b")) {
+
+                                                }
+                                                if (op3.equals("c")) {
+
+                                                }
+                                            }
                                         }
                                         if (op2.equals("b")) {
 

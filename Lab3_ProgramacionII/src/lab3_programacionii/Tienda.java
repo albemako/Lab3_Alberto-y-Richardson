@@ -16,8 +16,9 @@ public class Tienda extends Locales{
         super();
     }
 
-    public Tienda(int tamaño) {
-        setTamaño(tamaño);
+    public Tienda(int tamaño, String nombre, int piso, Empleado em_encargado) {
+        super(nombre, piso, em_encargado);
+        this.tamaño = tamaño;
     }
     
 
