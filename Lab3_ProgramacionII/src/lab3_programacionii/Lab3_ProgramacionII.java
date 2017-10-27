@@ -42,7 +42,7 @@ public class Lab3_ProgramacionII {
                 lugar=JOptionPane.showInputDialog("Lugar de nacimiento");
                 usuario=JOptionPane.showInputDialog("Username");
                 pass=JOptionPane.showInputDialog("Password");
-                personas.add(new Cliente(nombre,edad,lugar,usuario,pass));
+                personas.add(new Cliente());
             }
             if (op.equals("b")){
                 //login
