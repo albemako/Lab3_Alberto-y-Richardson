@@ -32,6 +32,11 @@ public class Tienda extends Locales{
         }
     }
 
+    @Override
+    public String toString() {
+        return "tamanio=" + tamaño + '}';
+    }
+
     
     
     

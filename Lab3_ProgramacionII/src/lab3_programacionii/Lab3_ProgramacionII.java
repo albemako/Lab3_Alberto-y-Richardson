@@ -22,6 +22,7 @@ public class Lab3_ProgramacionII {
         ArrayList<Locales>locales=new ArrayList();
         ArrayList <Personas>personas=new ArrayList();
         personas.add(new Socio("usuario", "contra", "usuario@yahoo.com", "usu", 199999, "fecha"));
+        personas.add(new Cliente(1000, "user", "pass", "sdsd", "user", 233, "asdasd", true, false));
         //login o registro
         String op="";
         while ( !op.equals("s") ) {  
@@ -68,6 +69,7 @@ public class Lab3_ProgramacionII {
                                                 + "a-Crear locales\n"
                                                 + "b-Crear y asignar empleados\n"
                                                 + "c-Agregar productos\n"
+                                                + "d-Modificar\n"
                                                 + "s-salir");
                                         if(op2==null){
                                             op2="s";
@@ -194,14 +196,86 @@ public class Lab3_ProgramacionII {
 
                                             index=Integer.parseInt(JOptionPane.showInputDialog(s));
                                         }
-                                        if(locales.get(index)instance)
+                                        //if(locales.get(index)instance)--CAMBIAR
+                                        if (op2.equals("d")) {
+                                            String [] mod = {
+                                                "1.-Personas",
+                                                "2.-Locales",
+                                            };
+                                            String respM = (String) JOptionPane.showInputDialog(null, 
+                            "Seleccione el producto", "PRODUCTOS", 
+                            JOptionPane.DEFAULT_OPTION, null, mod, mod[0]);
+                                            int mod1 = Integer.parseInt(respM);
+                                            switch (mod1) {
+                                                case 1:
+                                                    int temp = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posción"));
+                                                    String clase1 = personas.get(temp).getClass().getName();
+                                                    if (clase1=="Empleado") {
+                                                        personas.remove(temp);
+                                                        int id;
+                double dinero;
+                String usuario, contra, correo, nombre, fecha;
+                nombre=JOptionPane.showInputDialog("nombre");
+                usuario=JOptionPane.showInputDialog("usuario");
+                contra=JOptionPane.showInputDialog("contrasenia");
+                correo=JOptionPane.showInputDialog("correo");
+                id=Integer.parseInt(
+                  JOptionPane.showInputDialog("id")
+                );
+                fecha=JOptionPane.showInputDialog("fecha");
+                dinero=Double.parseDouble(JOptionPane.showInputDialog("Dinero"));
+                personas.add(temp,new Cliente(dinero, usuario, contra, correo, nombre, id, fecha, true, false));
+                                                       // personas.add(temp, new Empleado(clase1, mod1, user, pass, clase1, op2, i, clase1));
+                                                    }
+                                                    break;
+                                                default:
+                                                    throw new AssertionError();
+                                            }
+                                        }
                                     }
                                     resp=1;
                                 }else{
                                     if(personas.get(i).isEmpleado_cliente()){
                                         //cliente
+                                        
                                         System.out.println("hola cliente");
+                                        
+                                        String [] tiendas = new String [locales.size()];
+                                        for (int j = 0; j < locales.size(); j++) {
+                                            tiendas[j] = locales.get(j)+"";
+                                        }
+                                        String respc = (String) JOptionPane.showInputDialog(null, 
+                            "Seleccione el producto", "PRODUCTOS", 
+                            JOptionPane.DEFAULT_OPTION, null, tiendas, tiendas[0]);
+                                        int posc = locales.indexOf(respc);
+                                        String [] productos1 = new String[locales.get(posc).getProductos().size()];
+                                        for (int j = 0; j < productos1.length; j++) {
+                                            productos1[j] = locales.get(posc).getProductos().get(j)+"";
+                                        }
+                                        String respp = (String) JOptionPane.showInputDialog(null, 
+                            "Seleccione el producto", "PRODUCTOS", 
+                            JOptionPane.DEFAULT_OPTION, null, productos1, productos1[0]);
+                                        ((Cliente)personas.get(personas.indexOf(user))).getProductos().
+                                                add(locales.get(posc).getProductos().get(locales.get(posc).getProductos().indexOf(respp)));
+                                       double precio= ((Cliente)personas.get(personas.indexOf(user))).getProductos().get(locales.get(posc).getProductos().indexOf(respp)).getPrecio();
+                                       double dinero = ((Cliente)personas.get(personas.indexOf(user))).getDinero();
+                                       dinero -= precio;
+                                       ((Cliente)personas.get(personas.indexOf(user))).setDinero(dinero);
+                                       locales.get(posc).getProductos_vendidos().add(locales.get(posc).getProductos().get(locales.get(posc).getProductos().indexOf(respp)));
+                                       locales.get(posc).getProductos().remove(locales.get(posc).getProductos().indexOf(respp));
+                                        System.out.println("hola cliente");
+                                        if (locales.get(posc).getProductos_vendidos().size() == 5) {
+                                            ((Socio)personas.get(0)).getReportes().add(locales.get(posc).getProductos_vendidos());
+                                            for (int j = 0; j < locales.get(posc).getProductos_vendidos().size(); j++) {
+                                                locales.get(posc).getProductos_vendidos().remove(j);
+                                            }
+                                        }
+                                        //CAMBIAR ESOO
+                                        
                                         resp=1;
+                                        
+                                        
+                                        
                                     }else{
                                         //empleado
                                         System.out.println("hola empleado");

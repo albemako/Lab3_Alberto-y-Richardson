@@ -46,7 +46,7 @@ public class Ropa extends Productos{
 
     @Override
     public String toString() {
-        return "Ropa{" + "talla=" + talla + ", sexo=" + sexo + '}';
+        return "talla=" + talla + ", sexo=" + sexo + '}';
     }
     
     

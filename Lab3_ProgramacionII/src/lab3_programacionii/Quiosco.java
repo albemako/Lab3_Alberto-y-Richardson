@@ -35,7 +35,7 @@ public class Quiosco extends Locales{
 
     @Override
     public String toString() {
-        return "Quiosco{" + "nombre_tienda=" + nombre_tienda + '}';
+        return nombre_tienda;
     }
     
     
