@@ -4,18 +4,14 @@
  * and open the template in the editor.
  */
 package lab3_programacionii;
-//puse un comentario
+
+import java.util.ArrayList;
+
 /**
  *
  * @author RALC
  */
-public class Lab3_ProgramacionII {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-       
-    }
+public class Cliente {
+    ArrayList <Productos> productos;
     
 }
