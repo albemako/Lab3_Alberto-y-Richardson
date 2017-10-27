@@ -21,7 +21,7 @@ public class Lab3_ProgramacionII {
     public static void main(String[] args) {
         ArrayList<Locales>locales=new ArrayList();
         ArrayList <Personas>personas=new ArrayList();
-        personas.add(new Personas("usuario", "contra", "usuario@yahoo.com", "usu", 199999, "fecha", false, true));
+        personas.add(new Socio("usuario", "contra", "usuario@yahoo.com", "usu", 199999, "fecha"));
         //login o registro
         String op="";
         while ( !op.equals("s") ) {  
@@ -59,7 +59,7 @@ public class Lab3_ProgramacionII {
                         pass=JOptionPane.showInputDialog("Password");
                         for (int i = 0; i < personas.size(); i++) {
                             if(personas.get(i).getUsername().contains(user) && personas.get(i).getPassword().contains(pass)){
-                                if(personas.get(i).isSocio()){
+                                if(personas.get(i) instanceof Socio){
                                     //socio
                                     String op2="";
                                     while ( !op2.equals("s") ) {  
@@ -109,13 +109,16 @@ public class Lab3_ProgramacionII {
 
                                         }
                                     }
+                                    resp=1;
                                 }else{
                                     if(personas.get(i).isEmpleado_cliente()){
                                         //cliente
                                         System.out.println("hola cliente");
+                                        resp=1;
                                     }else{
                                         //empleado
                                         System.out.println("hola empleado");
+                                        resp=1;
                                     }
                                 }
                             }
