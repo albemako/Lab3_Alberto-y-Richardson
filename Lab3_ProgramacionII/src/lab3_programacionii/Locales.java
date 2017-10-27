@@ -17,10 +17,12 @@ public class Locales {
     private Empleado em_encargado;
     private ArrayList <Empleado> empleados;
     private ArrayList <Productos> productos;
+    private ArrayList <Productos> productos_vendidos;
     
 
     public Locales() {
         empleados = new ArrayList();
+        productos_vendidos = new ArrayList();
     }
 
     public Locales(String nombre, int piso, Empleado em_encargado) {
@@ -28,6 +30,7 @@ public class Locales {
         this.piso = piso;
         empleados = new ArrayList();
         this.em_encargado = em_encargado;
+        productos_vendidos = new ArrayList();
     }
 
     public ArrayList<Productos> getProductos() {
@@ -71,10 +74,20 @@ public class Locales {
         this.em_encargado = em_encargado;
     }
 
+    public ArrayList<Productos> getProductos_vendidos() {
+        return productos_vendidos;
+    }
+
+    public void setProductos_vendidos(ArrayList<Productos> productos_vendidos) {
+        this.productos_vendidos = productos_vendidos;
+    }
+
     @Override
     public String toString() {
-        return "Locales{" + "nombre=" + nombre + ", piso=" + piso + ", empleados=" + empleados + ", em_encargado=" + em_encargado + '}';
+        return "Locales{" + "nombre=" + nombre + ", piso=" + piso + ", em_encargado=" + em_encargado + ", empleados=" + empleados + ", productos=" + productos + ", productos_vendidos=" + productos_vendidos + '}';
     }
+
+
     
     
     
