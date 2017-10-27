@@ -19,9 +19,9 @@ public class Lab3_ProgramacionII {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-<<<<<<< HEAD
+
         ArrayList <Personas>personas=new ArrayList();
-        
+        personas.add(new Personas("usuario", "contra", "usuario@yahoo.com", "usu", 199999, "fecha", false, true));
         //login
         int resp=1, resp2=1;
                 do{
@@ -33,10 +33,10 @@ public class Lab3_ProgramacionII {
                         pass=JOptionPane.showInputDialog("Password");
                         for (int i = 0; i < personas.size(); i++) {
                             if(personas.get(i).getUsername().contains(user) && personas.get(i).getPassword().contains(pass)){
-                                if(personas.getSocio){
+                                if(personas.get(i).isSocio()){
                                     System.out.println("hola socio");
                                 }else{
-                                    if(personas.getEmpleado_cliente){
+                                    if(personas.get(i).isEmpleado_cliente()){
                                         System.out.println("hola cliente");
                                     }else{
                                         System.out.println("hola empleado");
@@ -53,9 +53,7 @@ public class Lab3_ProgramacionII {
                        resp2=0;
                     }
                 }while(resp2==0);
-=======
-       
->>>>>>> 09337d7f667d748d4ecaa2b28f3cbfe40982ae91
+
     }
     
 }
